@@ -1,6 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: 'MaplestoryOTFBold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 
 :root {
   --background: #ffffff;
@@ -15,11 +23,44 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("//images/background.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
 }
 
+#code_with_me{
+  height: 60vh;
+}
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+header {
+  grid-row: 1;
+  z-index: 99 ;
+  min-height: 10vh;
+
+}
+main{
+  min-height: 85vh;
+  grid-row: 2;
+  overflow-y: scroll; 
+  scroll-behavior: smooth;
+  scrollbar-gutter: auto;
+  scrollbar-width: none;
+}
+footer {
+  grid-row: 3; 
+  z-index: 99 ;
+  min-height: 5vh;
+  max-height: 5vh;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
