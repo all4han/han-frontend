@@ -1,0 +1,26 @@
+import type {NextApiRequest, NextApiResponse} from 'next'
+
+
+type Data = {
+    success: boolean
+    message: string
+    token?: string
+}
+export default function handler(
+    req: NextApiRequest,
+    res: NextApiResponse<Data>) {
+    if (req.method === 'POST') {
+        const {email, password} = req.body
+
+        // 여기서 실제로는 DB 체크하고 인증해야 함
+        if (email === 'test@example.com' && password === 'password123') {
+            // 성공 시 토큰 발급 (실제로는 JWT 같은 걸로 제대로 만들어야 함)
+            res.status(200).json({success: true, message: '로그인 성공', token: 'fake_token_12345'})
+        } else {
+            res.status(401).json({success: false, message: '로그인 실패'})
+        }
+    } else {
+        res.setHeader('Allow', ['POST'])
+        res.status(405).end(`Method ${req.method} Not Allowed`)
+    }
+}

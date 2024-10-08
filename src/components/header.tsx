@@ -21,11 +21,11 @@ export default function Header() {
                 {/* The navigation menu of the application. */}
                 <nav>
                     {/* Link to the login page. */}
-                    <Link href="/login" className="text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300">
+                    <Link href="/login_page" className="text-gray-600 hover:text-gray-800 px-3 py-2 transition duration-300">
                         Login
                     </Link>
                     {/* Link to the sign-up page. */}
-                    <Link href="/join" className="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg transition duration-300">
+                    <Link href="/join_page" className="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg transition duration-300">
                         Sign Up
                     </Link>
                 </nav>
